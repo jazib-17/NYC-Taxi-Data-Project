@@ -31,15 +31,15 @@ The pipeline loads raw `.parquet` files using PySpark and performs the following
 
 ### PySpark Exploration Highlights
 
-**Basic aggregations** — average trip distance by passenger count, fare and tip by hour of day, payment type distribution, and top 10 longest trips.
+**Basic aggregations:** average trip distance by passenger count, fare and tip by hour of day, payment type distribution, and top 10 longest trips.
 
-**Window functions** — ranks the top 3 busiest pickup hours within each day using `rank()` over a date partition. This identifies peak demand periods at a daily level rather than just an overall average.
+**Window functions:** ranks the top 3 busiest pickup hours within each day using `rank()` over a date partition. This identifies peak demand periods at a daily level rather than just an overall average.
 
-**Multi-aggregation** — a single `groupBy` on payment type returning trip count, average fare, average tip, and average distance together.
+**Multi-aggregation:** a single `groupBy` on payment type returning trip count, average fare, average tip, and average distance together.
 
-**SQL interface** — registers the DataFrame as a temp view and queries it with `spark.sql()`, identifying the top 10 busiest hours across all trips.
+**SQL interface:** registers the DataFrame as a temp view and queries it with `spark.sql()`, identifying the top 10 busiest hours across all trips.
 
-**Bucketizer** — bins trips into distance categories (Short / Medium / Long / Very Long) using `pyspark.ml.feature.Bucketizer` and compares average fares and tips across buckets.
+**Bucketizer:** bins trips into distance categories (Short / Medium / Long / Very Long) using `pyspark.ml.feature.Bucketizer` and compares average fares and tips across buckets.
 
 ### Notes on Running the Pipeline
 
