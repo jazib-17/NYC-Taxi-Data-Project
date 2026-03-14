@@ -77,7 +77,7 @@ Demand follows a very predictable daily pattern across all four months. Trip vol
 ### Tip Percentage Distribution
 ![Tip Distribution](outputs/charts/tip_distribution_by_month.png)
 
-Tip percentages are largely consistent across all four months, with the bulk of tips falling in a predictable range. August shows a slightly wider body in the violin shape, suggesting marginally more variability in tipping behaviour during the summer — possibly reflecting more tourist riders who tip differently than regular commuters. A notable finding is the number of trips with tip percentages between 60–100%, which are surprising but likely reflect short, cheap rides where even a small dollar tip becomes a high percentage of the fare. A box plot was initially used here but was switched to a violin plot because the volume of rows caused the outlier markers to overwhelm the chart, making the distribution impossible to read.
+Tip percentages are largely consistent across all four months, with the bulk of tips falling in a predictable range. August shows a slightly narrower body in the violin shape, suggesting marginally less variability in tipping behaviour during the summer, possibly reflecting more consistent rider behaviour, such as tourists who tend to follow the suggested tip prompts on the payment screen rather than choosing a custom amount.. A notable finding is the number of trips with tip percentages between 60–100%, which are surprising but likely reflect short, cheap rides where even a small dollar tip becomes a high percentage of the fare. A box plot was initially used here but was switched to a violin plot because the volume of rows caused the outlier markers to overwhelm the chart, making the distribution impossible to read.
 
 ---
 
