@@ -57,27 +57,27 @@ Loads cleaned `.csv` files for all four months and generates cross-month compari
 ### Average Fare Trend
 ![Average Fare Trend](outputs/charts/fare_trend.png)
 
-A line chart with annotated values showing how average fare amounts shift across the four months. The y-axis is scaled tightly to the actual data range to make small fluctuations visible.
+Average fares remain remarkably stable across all four months, ranging narrowly from $20.27 to $21.00. Fares peak in September at $21.00 before gradually declining through October and November. The consistency suggests NYC taxi pricing is not heavily influenced by season, at least over this four month window.
 
 ### Total Trip Volume by Month
 ![Trip Volume](outputs/charts/trip_volume_by_month.png)
 
-Bar chart showing total trip counts per month. Useful for identifying seasonal demand shifts heading into fall and winter.
+Trip volume peaks in October and is notably lower in August. One possible explanation is that August is a summer month where people may be more inclined to walk or bike, while the cooler fall months push more riders toward taxis. It is also worth noting that October's volume makes it the busiest month in this dataset despite fares being slightly lower than September.
 
 ### Average Trip Duration Heatmap
 ![Duration Heatmap](outputs/charts/duration_heatmap.png)
 
-A heatmap of average trip duration broken down by hour of day and month. Highlights how rush hour patterns and trip lengths shift across months — longer trips tend to cluster around morning and evening commute windows.
+This is the most visually interesting chart in the project. The longest average trip durations consistently appear around **hour 5** and again around **hours 15–16** across all four months. The early morning spike at hour 5 likely reflects airport runs or long cross-borough trips with very little traffic. The mid-afternoon spike around 3–4pm aligns with the start of rush hour — trips are either longer due to heavy traffic, or passengers are travelling greater distances to reach workplaces or transit hubs. The pattern is consistent month over month, suggesting it is structural rather than seasonal.
 
 ### Hourly Trip Demand
 ![Hourly Demand](outputs/charts/hourly_demand_by_month.png)
 
-Overlapping line chart showing trip volume by hour for each month. The morning and evening rush hours are clearly visible, and the lines show how demand patterns remain consistent month over month with minor variations.
+Demand follows a very predictable daily pattern across all four months. Trip volume bottoms out overnight between hours 1–6, then climbs steadily through the morning. Demand peaks sharply in the **late afternoon between hours 15–19**, coinciding with the end of the standard workday. The consistency across months reinforces that commuter behaviour is the primary driver of NYC taxi demand rather than weather or season.
 
 ### Tip Percentage Distribution
 ![Tip Distribution](outputs/charts/tip_distribution_by_month.png)
 
-Violin plot showing the distribution of tip amounts as a percentage of fare across months. The `inner="quartile"` setting shows quartile lines inside each violin, combining the readability of a box plot with the distributional detail of a density plot. Chosen over a box plot because the large dataset (millions of rows) makes whisker-based plots less informative.
+Tip percentages are largely consistent across all four months, with the bulk of tips falling in a predictable range. August shows a slightly wider body in the violin shape, suggesting marginally more variability in tipping behaviour during the summer — possibly reflecting more tourist riders who tip differently than regular commuters. A notable finding is the number of trips with tip percentages between 60–100%, which are surprising but likely reflect short, cheap rides where even a small dollar tip becomes a high percentage of the fare. A box plot was initially used here but was switched to a violin plot because the volume of rows caused the outlier markers to overwhelm the chart, making the distribution impossible to read.
 
 ---
 
