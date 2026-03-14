@@ -57,7 +57,7 @@ Loads cleaned `.csv` files for all four months and generates cross-month compari
 ### Average Fare Trend
 ![Average Fare Trend](outputs/charts/fare_trend.png)
 
-Average fares remain remarkably stable across all four months, ranging narrowly from $20.27 to $21.00. Fares peak in September at $21.00 before gradually declining through October and November. The consistency suggests NYC taxi pricing is not heavily influenced by season, at least over this four month window.
+Average fares remain remarkably stable across all four months, ranging narrowly from $20.27 to $21.03. Fares peak in September at $21.00 before gradually declining through October and November. The consistency suggests NYC taxi pricing is not heavily influenced by season, at least over this four month window.
 
 ### Total Trip Volume by Month
 ![Trip Volume](outputs/charts/trip_volume_by_month.png)
