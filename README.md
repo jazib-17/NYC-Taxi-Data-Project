@@ -43,10 +43,13 @@ The pipeline loads raw `.parquet` files using PySpark and performs the following
 
 ### Notes on Running the Pipeline
 
-- PySpark is configured with `spark.driver.memory = 4g` to handle large datasets on a local machine
-- The full dataset exceeds Excel's row limit (~1M rows) — this is expected and intentional
-- A 30% sample is saved for visualization; the full pipeline processes all rows
-- On Windows, the output is saved via `toPandas().to_csv()` to avoid Hadoop/winutils requirements
+The full NYC taxi dataset for a single month contains several million rows, which creates two practical challenges when working locally on Windows.
+
+- **Memory limitations:** calling `toPandas()` on the full cleaned DataFrame caused a `java.lang.OutOfMemoryError: Java heap space` crash, meaning the JVM ran out of memory trying to collect all rows at once. To address this, PySpark is configured with `spark.driver.memory = 4g` and the output is sampled at 30% using `df_clean.sample(fraction=0.3, seed=42)` before converting to Pandas. A 30% sample still represents millions of rows and is more than sufficient for meaningful analysis and visualization, while keeping memory usage manageable on a standard laptop.
+
+- **GitHub file size limits:** even at 30%, the processed CSV files are large. GitHub enforces a 100MB limit per file, which the October output exceeded and had to be excluded from the repo. The other three months fall under the limit and are included. Any excluded file can be regenerated locally by running `extract.py` with the corresponding raw `.parquet` file in `data/raw/`.
+
+- **Windows CSV output:** saving is done via `toPandas().to_csv()` rather than Spark's native `.write.csv()` to avoid the need for a Hadoop installation or `winutils.exe` setup on Windows. This produces a single clean CSV file rather than Spark's default folder of part files, which is also more convenient for sharing and loading downstream.
 
 ---
 
