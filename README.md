@@ -128,7 +128,7 @@ Four fundamentally different approaches were explored and compared, all tuned us
 
 ---
 
-#### 1. Lasso Regression (`W26P1_Lasso.R`, `W26P1_Lassomin.R`)
+#### 1. Lasso Regression (`Model_Lasso.R`, `Model_Lassomin.R`)
 
 A linear baseline using the `glmnet` package in R. Two standard choices of regularization strength were compared:
 
@@ -139,7 +139,7 @@ The trade-off is clear: λ_1se is more interpretable but less accurate; λ_min e
 
 ---
 
-#### 2. Generalized Additive Model — GAM (`W26P1_GAM.R`)
+#### 2. Generalized Additive Model — GAM (`Model_GAM.R`)
 
 After establishing a linear baseline, a GAM with **cubic regression splines** was fitted using the `mgcv` package to allow non-linear relationships between each predictor and fare amount. Smoothing splines were applied to distance, hour, and pickup/dropoff coordinates; day of week and passenger count were kept as linear terms.
 
@@ -149,7 +149,7 @@ GAM improves on Lasso by capturing non-linear effects per feature, but still ass
 
 ---
 
-#### 3. Random Forest — Ranger (`W26P1_Ranger.R`, `W26P1_RandomForests.R`)
+#### 3. Random Forest — Ranger (`Model_Ranger.R`, `Model_RandomForests.R`)
 
 Random Forests build an ensemble of decision trees, each trained on a bootstrap sample of the data with a random subset of features considered at each split (`mtry`). Predictions are made by averaging across all trees, reducing variance relative to a single tree.
 
@@ -163,7 +163,7 @@ Variable importance confirmed the feature engineering was meaningful — distanc
 
 ---
 
-#### 4. Gradient Boosting — GBM & XGBoost (`W26P1_XGBoost.R`)
+#### 4. Gradient Boosting — GBM & XGBoost (`Model_XGBoost.R`)
 
 Boosting builds trees **sequentially**, with each new tree correcting the residuals of the previous ones, unlike Random Forest which builds trees independently in parallel.
 
