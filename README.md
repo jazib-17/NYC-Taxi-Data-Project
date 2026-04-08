@@ -160,7 +160,7 @@ After adding the engineered features described above, the expanded model was re-
 Variable importance confirmed the feature engineering was meaningful — distance dominated at 100%, followed by coordinates and the new airport distance features. Cyclical time encoding, hour, day of week, and passenger count contributed the least.
 
 <!-- Optional: add variable importance plot here -->
-![Ranger Variable Importance](kaggle_competition/RangerVarImportance.png)
+![Ranger Variable Importance](kaggle-competition/RangerVarImportance.png)
 
 ---
 
@@ -178,7 +178,7 @@ Boosting builds trees **sequentially**, with each new tree correcting the residu
 XGBoost variable importance mirrored the Random Forest results — distance dominant, followed by dropoff longitude and direction, with airport distances contributing meaningfully. **Kaggle RMSE: 3.56**
 
 <!-- Optional: add XGBoost variable importance plot here -->
-![XGBoost Variable Importance](kaggle_competition/XGvarImportance.png)
+![XGBoost Variable Importance](Kaggle-Competition/XGvarImportance.png)
 
 ---
 
