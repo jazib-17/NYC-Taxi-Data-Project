@@ -19,7 +19,7 @@ NYC-Taxi-Data-Project/
 │   └── visualization.py            # Cross-month visualizations using Matplotlib & Seaborn
 ├── outputs/
 │   └── charts/                     # Generated chart images
-├── kaggle_competition/
+├── kaggle-competition/
 │   ├── W26P1_Lasso.R               # Lasso regression (λ_1se)
 │   ├── W26P1_Lassomin.R            # Lasso regression (λ_min)
 │   ├── W26P1_GAM.R                 # Generalized Additive Model with cubic splines
@@ -97,7 +97,7 @@ Tip percentages are largely consistent across all four months. August shows a sl
 
 ---
 
-## Kaggle Competition (`kaggle_competition/`)
+## Kaggle Competition (`kaggle-competition/`)
 
 This component focuses on predicting NYC taxi fare amounts using ~30,000 labelled training trips. Each trip includes pickup and dropoff coordinates, pickup datetime, and passenger count. Submissions are evaluated on **Root Mean Squared Error (RMSE)** on a held-out test set.
 
@@ -159,7 +159,6 @@ After adding the engineered features described above, the expanded model was re-
 
 Variable importance confirmed the feature engineering was meaningful — distance dominated at 100%, followed by coordinates and the new airport distance features. Cyclical time encoding, hour, day of week, and passenger count contributed the least.
 
-<!-- Optional: add variable importance plot here -->
 ![Ranger Variable Importance](kaggle-competition/RangerVarImportance.png)
 
 ---
@@ -177,8 +176,7 @@ Boosting builds trees **sequentially**, with each new tree correcting the residu
 
 XGBoost variable importance mirrored the Random Forest results — distance dominant, followed by dropoff longitude and direction, with airport distances contributing meaningfully. **Kaggle RMSE: 3.56**
 
-<!-- Optional: add XGBoost variable importance plot here -->
-![XGBoost Variable Importance](Kaggle-Competition/XGvarImportance.png)
+![XGBoost Variable Importance](kaggle-competition/XGVarImportance.png)
 
 ---
 
